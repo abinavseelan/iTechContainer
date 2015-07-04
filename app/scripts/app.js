@@ -24,9 +24,9 @@ var app = angular
         templateUrl: 'views/main.html',
         controller: 'MainCtrl'
       })
-      .when('/about', {
-        templateUrl: 'views/about.html',
-        controller: 'AboutCtrl'
+      .when('/recipient', {
+        templateUrl: 'views/recipient.html',
+        controller: 'RecipientCtrl'
       })
       .when('/simulation',{
         templateUrl: 'views/simulation.html',
