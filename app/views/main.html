@@ -1,23 +1,19 @@
-<div class="jumbotron">
-  <h1>'Allo, 'Allo!</h1>
-  <p class="lead">
-    <img src="images/yeoman.png" alt="I'm Yeoman"><br>
-    Always a pleasure scaffolding your apps.
-  </p>
-  <p><a class="btn btn-lg btn-success" ng-href="#/">Splendid!<span class="glyphicon glyphicon-ok"></span></a></p>
-</div>
-
-<div class="row marketing">
-  <h4>HTML5 Boilerplate</h4>
-  <p>
-    HTML5 Boilerplate is a professional front-end template for building fast, robust, and adaptable web apps or sites.
-  </p>
-
-  <h4>Angular</h4>
-  <p>
-    AngularJS is a toolset for building the framework most suited to your application development.
-  </p>
-
-  <h4>Karma</h4>
-  <p>Spectacular Test Runner for JavaScript.</p>
-</div>
+<md-content class="md-padding md-primary" layout="row" layout-align="start start" flex style="background-color: #e74c3c">
+    <md-card flex="40">
+      <md-card-content>
+        <h2 class="md-title">Sign In</h2>
+        <md-input-container flex>
+          <label>Username</label>
+          <input ng-model="username">
+        </md-input-container>
+        <md-input-container flex>
+          <label>Password</label> 
+          <input ng-model="password">
+        </md-input-container>
+      </md-card-content>
+      <div class="md-actions" layout="row" layout-align="end center">
+        <md-button ng-click="authUser();">Sign In</md-button>
+        <md-button ng-click="clearData();">Clear</md-button>
+      </div>
+    </md-card>
+</md-content>
