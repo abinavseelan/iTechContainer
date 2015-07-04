@@ -18,7 +18,7 @@ var app = angular
     'ngTouch',
     'ngMaterial'
   ])
-  .config(function ($routeProvider, $mdThemingProvider) {
+  .config(['$routeProvider','$mdThemingProvider',function($routeProvider, $mdThemingProvider) {
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',
@@ -43,6 +43,6 @@ var app = angular
       .warnPalette('red');
 
 
-  });
+  }]);
 
 
