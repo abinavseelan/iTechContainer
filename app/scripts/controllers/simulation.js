@@ -2,26 +2,16 @@
 
 /**
  * @ngdoc function
- * @name itcApp.controller:MainCtrl
+ * @name itcApp.controller:SimulationCtrl
  * @description
- * # MainCtrl
+ * # SimulationCtrl
  * Controller of the itcApp
- angular.module('itcApp')
-  .controller('MainCtrl', function ($scope) {
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
-  });
  */
-
-
 angular.module('itcApp')
-.controller('MainCtrl', ['$scope','$mdSidenav', function($scope, $mdSidenav){
-	$scope.openLeftMenu = function() {
-    $mdSidenav('left').toggle();
-  };
+  .controller('SimulationCtrl', ['$scope','$mdSidenav', function($scope, $mdSidenav){
+  	$scope.openLeftMenu = function() {
+    	$mdSidenav('left').toggle();
+  	};
   Parse.initialize("WSpkgtQhqwNA49k2kpuJllJrGyzEJ41hcgXSAIXv", "BzNKo3YGzGeoWEtQUPLlfgZerYNGED9on6DEAfGd");
   
   var Temperature = Parse.Object.extend('Temperature');
