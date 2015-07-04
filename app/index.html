@@ -16,79 +16,17 @@
     <!-- endbuild -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   </head>
-  <body ng-app="itcApp" layout="row" ng-controller="MainCtrl as mc">
+  <body ng-app="itcApp" layout="row">
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
     <!-- Add your site or application content here -->
-    <md-sidenav md-component-id="left" class="md-sidenav-left">
-      Left Nav!
-    </md-sidenav>
-  
-    <md-content flex  layout-align="center center">
+    <div layout="row" flex ng-view="">
 
-      <md-toolbar>        
-        <div class="md-toolbar-tools">
-          <md-button class="md-icon-button" ng-click="openLeftMenu()" aria-label="Settings">
-            <i class="material-icons">menu</i>
-          </md-button>
-           <h2>
-            <span>ITC App</span>
-          </h2>
-          <span flex></span>
-        </div>
-      </md-toolbar>
+    </div>
 
-      <div layout="row" layout-align="center center">        
-
-        <div layout="" flex="70">
-          <div flex="10" layout="" layout-align="center center">
-            <span class="md-body-1">Temperature (&deg;C)</span>
-          </div>
-          <md-slider flex="" min="0" max="100" ng-model="sense.temp" id="temp-slider" class="">
-          </md-slider>
-          <div flex="20" layout="" layout-align="center center">
-            <input type="text" ng-model="sense.temp" aria-label="purple" aria-controls="temp-slider">
-          </div>
-        </div>
-      </div>  
-      <div layout="row" layout-align="center">        
-
-        <div layout="" flex="70">
-          <div flex="10" layout="" layout-align="center center">
-            <span class="md-body-1">Humidity (%)</span>
-          </div>
-          <md-slider flex="" min="0" max="100" ng-model="sense.hum" id="hum-slider" class="">
-          </md-slider>
-          <div flex="20" layout="" layout-align="center center">
-            <input type="text" ng-model="sense.hum" aria-label="blue" aria-controls="hum-slider">
-          </div>
-        </div>
-      </div>
-
-      <div layout="row" layout-align="center">        
-
-        <div layout="" flex="70">
-          <div flex="10" layout="" layout-align="center center">
-            <span class="md-body-1">Pressure</span>
-          </div>
-          <md-slider flex="" min="0" max="100" ng-model="sense.pres" id="pres-slider" class="">
-          </md-slider>
-          <div flex="20" layout="" layout-align="center center">
-            <input type="text" ng-model="sense.pres" aria-label="blue" aria-controls="pres-slider">
-          </div>
-        </div>
-      </div>
-
-      <div layout="row" layout-align="center center">
-        <md-switch ng-model="data.cb1" aria-label="Switch 1" class="md-warn">
-          Drop: {{ data.cb1 }}
-        </md-switch>
-      </div>
-    </md-content>
-    
-
+    <script type="text/javascript" src="http://www.parsecdn.com/js/parse-1.4.2.min.js"></script>
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
     <script src="bower_components/jquery/dist/jquery.js"></script>
@@ -101,7 +39,6 @@
     <script src="bower_components/angular-touch/angular-touch.js"></script>
     <script src="bower_components/angular-aria/angular-aria.js"></script>
     <script src="bower_components/angular-material/angular-material.js"></script>
-    <script type="text/javascript" src="http://www.parsecdn.com/js/parse-1.4.2.min.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -109,6 +46,7 @@
         <script src="scripts/app.js"></script>
         <script src="scripts/controllers/main.js"></script>
         <script src="scripts/controllers/about.js"></script>
+        <script src="scripts/controllers/simulation.js"></script>
         <!-- endbuild -->
 </body>
 </html>
