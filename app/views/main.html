@@ -5,17 +5,19 @@
         <h2 class="md-title">Sign In</h2>
         <md-input-container flex>
           <label>Username</label>
-          <input ng-model="username">
+          <input ng-model="username" required name="username">
         </md-input-container>
         <md-input-container flex>
           <label>Password</label> 
           <input ng-model="password">
         </md-input-container>
+        <span class="signin-warn" ng-show="errorMessage.length">Error: {{errorMessage}}</span>
       </md-card-content>
       <div class="md-actions" layout="row" layout-align="end center">
         <md-button ng-click="authUser();">Sign In</md-button>
         <md-button ng-click="clearData();">Clear</md-button>
       </div>
+
     </md-card>
 </md-content>
 </div>

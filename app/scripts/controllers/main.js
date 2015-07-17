@@ -18,9 +18,9 @@
 
 
 angular.module('itcApp')
-.controller('MainCtrl', ['$scope', function($scope){
+.controller('MainCtrl', ['$scope', '$location', function($scope, $location){
     
-
+    $scope.errorMessage = '';
     Parse.initialize('WSpkgtQhqwNA49k2kpuJllJrGyzEJ41hcgXSAIXv', 'BzNKo3YGzGeoWEtQUPLlfgZerYNGED9on6DEAfGd');
 
     var User = Parse.Object.extend('Users');
@@ -28,18 +28,27 @@ angular.module('itcApp')
     $scope.clearData = function(){
       $scope.username = '';
       $scope.password = '';
+      $scope.errorMessage = '';
     };
 
     $scope.authUser = function(){
-      var users = new Parse.Query(User);
 
-      users.find({success: function(){
-        for(var user in users){
-          
+      Parse.User.logIn($scope.username, $scope.password, {
+        success: function(user) {
+          // Do stuff after successful login.
+          console.log('success!');
+          var un = user.get('username');
+          console.log(un);
+          if (un==='johndoe') {
+            console.log('icamehere');
+            $location.path('#/recipient');
+          }
+        },
+        error: function(user, error) {
+          // The login failed. Check error to see why.
+          $scope.errorMessage = error.message;
+          console.log('error: ' + error.message);
         }
-
-      }, error: function(error){
-        console.log('Query Error: '+error.message);
-      }});
+      });
     };
 }]);
