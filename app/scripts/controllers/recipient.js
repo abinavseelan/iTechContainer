@@ -8,9 +8,20 @@
  * Controller of the itcApp
  */
 angular.module('itcApp')
-.controller('RecipientCtrl', ['$scope', '$interval', function ($scope, $interval) {
+.controller('RecipientCtrl', ['$scope', '$interval', '$location', function ($scope, $interval, $location) {
     
     var maxDataPoints =  100;
+
+    Parse.initialize('WSpkgtQhqwNA49k2kpuJllJrGyzEJ41hcgXSAIXv', 'BzNKo3YGzGeoWEtQUPLlfgZerYNGED9on6DEAfGd');
+    $scope.currentUser = Parse.User.current();
+    if($scope.currentUser)
+    {
+        $scope.currentUserName = $scope.currentUser.get('username');
+    }
+    else
+    {   //no valid user
+        $location.path('/');
+    }
 
   	$scope.temperatureObj = {
   		'timeScale' : [],
@@ -47,15 +58,11 @@ angular.module('itcApp')
     		return y < 0 ? 0 : y > 100 ? 100 : y;
     }
 
-   //  $scope.temp.timeScale = [0,1,2,3,4,5];
-  	// $scope.series = ['Temperature'];
-  	// $scope.data = [
-   //  	[65, 59, 80, 81, 56, 55, 40]
-  	// ];
-  	
-  	// $scope.onClick = function (points, evt) {
-   //  console.log(points, evt);
-   //  $scope.temperatureObj.timeScale = [1,2,3,4,5,6];
-   //  $scope.temperatureObj.data = [[59, 80, 81, 56, 55, 40, 72]];
+    $scope.logUserOut = function () {
+      Parse.User.logOut();
+      $scope.currentUser = Parse.User.current();
+      $location.path('/');
+      //$scope.$apply();
+    }
   }
   ]);

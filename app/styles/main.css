@@ -10,3 +10,13 @@ body {
 	color: #e74c3c;
 	font-size: 0.75em;
 }
+
+.md-icon-button .user-icon
+{
+	line-height: 1;
+}
+
+.user-icon > i {
+	line-height: 1;
+	padding-top: 10px;
+}

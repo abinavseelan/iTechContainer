@@ -1,12 +1,24 @@
 <md-content flex layout-align="center center">
 	<md-toolbar>        
 	  <div class="md-toolbar-tools md-whiteframe-z1">
-	    <md-button class="md-icon-button" ng-click="openLeftMenu()" aria-label="Settings">
-	      <i class="material-icons">menu</i>
-	    </md-button>
-	     <h2>
-	      <span>ITC App</span>
-	    </h2>
+	  	<md-menu md-offset="10 72">
+		    <md-button class="md-icon-button user-icon" ng-click="$mdOpenMenu()" aria-label="Settings">
+		      <i class="material-icons ">perm_identity</i>
+		    </md-button>
+		    <md-menu-content width="4">
+		    	<md-menu-item>
+		    		<md-button class="md-primary" ng-click="logUserOut()">
+		    		Logout
+		    		</md-button>
+		    	</md-menu-item>
+		    	<md-menu-item>
+		    		<md-button class="md-primary">
+		    		Preferences
+		    		</md-button>
+		    	</md-menu-item>
+		    </md-menu-content>
+	    </md-menu>
+	     <h2>{{currentUserName}}</h2>
 	    <span flex></span>
 	  </div>
 	</md-toolbar>
@@ -18,7 +30,6 @@
 		data="temperatureObj.data"
 		labels="temperatureObj.timeScale"
 		options="temperatureObj.options"
-		legend="true" 
 		series="temperatureObj.seriesName"></canvas> 
 	</div>
 </md-content>
