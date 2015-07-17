@@ -21,13 +21,13 @@ angular.module('itcApp')
 .controller('MainCtrl', ['$scope', function($scope){
     
 
-    Parse.initialize("WSpkgtQhqwNA49k2kpuJllJrGyzEJ41hcgXSAIXv", "BzNKo3YGzGeoWEtQUPLlfgZerYNGED9on6DEAfGd");
+    Parse.initialize('WSpkgtQhqwNA49k2kpuJllJrGyzEJ41hcgXSAIXv', 'BzNKo3YGzGeoWEtQUPLlfgZerYNGED9on6DEAfGd');
 
-    var User = Parse.Object.extend("Users");
+    var User = Parse.Object.extend('Users');
 
     $scope.clearData = function(){
-      $scope.username = "";
-      $scope.password = "";
+      $scope.username = '';
+      $scope.password = '';
     };
 
     $scope.authUser = function(){
@@ -39,7 +39,7 @@ angular.module('itcApp')
         }
 
       }, error: function(error){
-        console.log("Query Error: "+error.message);
-      }})
-    }
+        console.log('Query Error: '+error.message);
+      }});
+    };
 }]);

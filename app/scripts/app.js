@@ -16,7 +16,8 @@ var app = angular
     'ngRoute',
     'ngSanitize',
     'ngTouch',
-    'ngMaterial'
+    'ngMaterial',
+    'chart.js'
   ])
   .config(['$routeProvider','$mdThemingProvider',function($routeProvider, $mdThemingProvider) {
     $routeProvider
@@ -38,9 +39,9 @@ var app = angular
 
       $mdThemingProvider
       .theme('default')
-      .primaryPalette('teal')
-      .accentPalette('deep-purple')
-      .warnPalette('red');
+      .primaryPalette('red')
+      .accentPalette('amber')
+      .warnPalette('amber');
 
 
   }]);

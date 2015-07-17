@@ -12,7 +12,7 @@ angular.module('itcApp')
   	$scope.openLeftMenu = function() {
     	$mdSidenav('left').toggle();
   	};
-  Parse.initialize("WSpkgtQhqwNA49k2kpuJllJrGyzEJ41hcgXSAIXv", "BzNKo3YGzGeoWEtQUPLlfgZerYNGED9on6DEAfGd");
+  Parse.initialize('WSpkgtQhqwNA49k2kpuJllJrGyzEJ41hcgXSAIXv', 'BzNKo3YGzGeoWEtQUPLlfgZerYNGED9on6DEAfGd');
   
   var Temperature = Parse.Object.extend('Temperature');
   var Pressure = Parse.Object.extend('Pressure');
@@ -38,7 +38,7 @@ angular.module('itcApp')
 
 
     }, error: function(error){
-      console.log("Error: " + error.message);
+      console.log('Error: ' + error.message);
     }});
 
     /*moisture.set({value: moistureValue});
@@ -46,7 +46,7 @@ angular.module('itcApp')
 
 
     }, error: function(error){
-      console.log("Error: " + error.message);
+      console.log('Error: ' + error.message);
     }});*/
 
     pressure.set({value: pressureValue});
@@ -54,7 +54,7 @@ angular.module('itcApp')
 
 
     }, error: function(error){
-      console.log("Error: " + error.message);
+      console.log('Error: ' + error.message);
     }});
 
     temperature.set({value: temperatureValue});
@@ -62,8 +62,8 @@ angular.module('itcApp')
 
 
     }, error: function(error){
-      console.log("Error: " + error.message);
+      console.log('Error: ' + error.message);
     }});
-  };
-  setInterval(sendData,5000);
+  }
+  //setInterval(sendData,5000);
 }]);

@@ -1,1 +1,24 @@
-<p>This is the recipient view.</p>
+<md-content flex layout-align="center center">
+	<md-toolbar>        
+	  <div class="md-toolbar-tools md-whiteframe-z1">
+	    <md-button class="md-icon-button" ng-click="openLeftMenu()" aria-label="Settings">
+	      <i class="material-icons">menu</i>
+	    </md-button>
+	     <h2>
+	      <span>ITC App</span>
+	    </h2>
+	    <span flex></span>
+	  </div>
+	</md-toolbar>
+
+	<div layout="row" flex layout-align="start center">
+		<canvas width="700" height="500"
+		id="Temperature" 
+		class="chart chart-line chart-xl" 
+		data="temperatureObj.data"
+		labels="temperatureObj.timeScale"
+		options="temperatureObj.options"
+		legend="true" 
+		series="temperatureObj.seriesName"></canvas> 
+	</div>
+</md-content>
