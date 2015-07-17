@@ -6,3 +6,7 @@ body {
   background-color: #e74c3c;
 }
 
+.signin-warn {
+	color: #e74c3c;
+	font-size: 0.75em;
+}
