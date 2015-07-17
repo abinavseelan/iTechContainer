@@ -10,7 +10,7 @@
 angular.module('itcApp')
 .controller('RecipientCtrl', ['$scope', '$interval', function ($scope, $interval) {
     
-    var maxDataPoints =  100;
+    var maxDataPoints =  20;
 
   	$scope.temperatureObj = {
   		'timeScale' : [],
@@ -26,7 +26,7 @@ angular.module('itcApp')
   	// Update the dataset at 25FPS for a smoothly-animating chart
     $interval(function () {
       getLiveChartData();
-    }, 1000);
+    }, 3000);
 
     function getLiveChartData () {
     	if($scope.temperatureObj.data[0].length)

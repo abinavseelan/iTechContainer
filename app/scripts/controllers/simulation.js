@@ -65,5 +65,5 @@ angular.module('itcApp')
       console.log('Error: ' + error.message);
     }});
   }
-  //setInterval(sendData,5000);
+  setInterval(sendData,5000);
 }]);
