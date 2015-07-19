@@ -41,7 +41,10 @@ angular.module('itcApp')
           console.log(un);
           if (un==='johndoe') {
             console.log('icamehere');
-            $location.path('#/recipient');
+            $location.path('/recipient');
+          }
+          else if(un === 'simulator'){
+            $location.path('/simulation');
           }
         },
         error: function(user, error) {
