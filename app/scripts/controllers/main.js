@@ -1,22 +1,5 @@
 'use strict';
 
-/**
- * @ngdoc function
- * @name itcApp.controller:MainCtrl
- * @description
- * # MainCtrl
- * Controller of the itcApp
- angular.module('itcApp')
-  .controller('MainCtrl', function ($scope) {
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
-  });
- */
-
-
 angular.module('itcApp')
 .controller('MainCtrl', ['$scope', '$location', function($scope, $location){
     
@@ -45,7 +28,13 @@ angular.module('itcApp')
           }
           else if(un === 'simulator'){
             $location.path('/simulation');
+              $location.path('/recipient');            
           }
+          else if(un==='simulator')
+          {
+              $location.path('/simulation');
+          }
+          $scope.$apply();
         },
         error: function(user, error) {
           // The login failed. Check error to see why.
